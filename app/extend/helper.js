@@ -1,9 +1,7 @@
 // 扩展里面引入第三方模块
 /*
 https://www.npmjs.com/package/silly-datetime
-
 1.npm i silly-datetime --save
-
 2、var sd = require('silly-datetime');
 */
 
