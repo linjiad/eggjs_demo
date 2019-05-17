@@ -14,7 +14,18 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_linjiad';
   // add your middleware config here
-  config.middleware = [];
+  // 增加配置中间件
+  config.middleware = [ 'printdate', 'forbidip' ];
+  // 配置中间件参数
+  config.printdate = {
+    aaa: 'aaa',
+  };
+  config.forbidip = {
+    ip: [
+      '127.0.0.1',
+      '192.168.0.1',
+    ],
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

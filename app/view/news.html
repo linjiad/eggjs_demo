@@ -12,9 +12,9 @@
 
 
 <ul>
-
     <%for(var i=0;i<list.length;i++){%>
-    <li><a href="/newscontent?aid=<%=list[i].aid%>"><%=list[i].title%></a>
+    <li>
+        <a href="/newscontent?aid=<%=list[i].aid%>"><%=list[i].title%></a>
         <span>---<%=helper.formatTime(list[i].dateline)%></span>
     </li>
     <%}%>
