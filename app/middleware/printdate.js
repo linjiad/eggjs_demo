@@ -6,8 +6,8 @@
 module.exports = (options, app) => {
   // 返回一个异步方法
   return async function printdate(ctx, next) {
-    // console.log(new Date());
-    // console.log(options.aaa);
+    console.log(new Date());
+    console.log(options.aaa);
     await next();
   };
 };

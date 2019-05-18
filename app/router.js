@@ -5,7 +5,9 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.news.index);
+  // 路由中获取中间件
+  const auth = app.middleware.printdate({ aaa: 'aaa' });
+  router.get('/', auth, controller.news.index);
   router.get('/newscontent', controller.news.content);
   router.get('/home', controller.home.index);
   router.get('/newa', controller.news.index2);
@@ -13,4 +15,7 @@ module.exports = app => {
   router.get('/content', controller.home.content);
   router.get('/newslist/:id', controller.home.newslist);
   router.get('/news2', controller.admin.index);
+  router.get('/post', controller.post.index);
+  router.post('/add', controller.post.add);
+  router.get('/shop', auth, controller.shop.index);
 };
